@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        let answer;
+        let min = a;
+        if (b < min) {
+          min = b;
+        }
+        if (c < min) {
+          min = c;
+        }
+        answer = min;
+        return answer;
+      }
+
+      console.log(solution(99, 50, 44));
+    </script>
+  </body>
+</html>
