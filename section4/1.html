@@ -1,0 +1,86 @@
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer,
+          max = Number.MIN_SAFE_INTEGER;
+        arr.forEach((ele) => {
+          let sum = 0;
+          let temp = ele;
+          // console.log("ele :", ele);
+          while (true) {
+            let a = temp / 10;
+            let b = temp % 10;
+
+            if (Math.floor(a) < 10) {
+              sum += Math.floor(a);
+              sum += Math.floor(b);
+              break;
+            } else {
+              sum += Math.floor(b);
+              temp = Math.floor(a);
+            }
+            // console.log("a :", Math.floor(a));
+            // console.log("b :", Math.floor(b));
+          }
+          console.log("temp :", temp);
+          if (sum > max) {
+            max = sum;
+            answer = ele;
+          } else if (sum === max) {
+            if (answer < ele) {
+              answer = ele;
+            }
+          }
+        });
+        console.log("max :", max);
+        return answer;
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html> -->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer,
+          max = Number.MIN_SAFE_INTEGER;
+
+        arr.forEach((ele) => {
+          let str = ele.toString();
+          let sum = 0;
+          let maxElement = 0;
+          for (let char of str) {
+            sum += parseInt(char);
+          }
+
+          if (max < sum) {
+            max = sum;
+            maxElement = ele;
+          } else if (max === sum) {
+            if (ele > maxElement) {
+              maxElement = ele;
+              answer = maxElement;
+            }
+          }
+        });
+        return answer;
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html>
