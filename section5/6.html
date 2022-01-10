@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+        let sH = new Map();
+        let max = 0;
+        for (let char of s) {
+          if (sH.get(char) === undefined) {
+            sH.set(char, 1);
+          } else {
+            let count = sH.get(char);
+            sH.set(char, count + 1);
+          }
+        }
+
+        sH.forEach((value, key, sH) => {
+          if (value > max) {
+            max = value;
+            answer = key;
+          }
+        });
+        console.log(sH.entries());
+        return answer;
+      }
+
+      let str = "BACBACCACCBDEDE";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
