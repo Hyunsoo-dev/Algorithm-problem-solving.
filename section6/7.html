@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(need, plan){
+                let answer="YES";
+                let needArr = need.split("");
+                let queue = [];                
+                for (let char of plan) {
+                    if (needArr.indexOf(char) > -1) {
+                        queue.push(char);
+                    }
+                }
+                if (queue.join("") !== need) answer = "NO";
+                return answer;
+            }
+
+            let a="CBA";
+            let b="CBDAGE";
+            console.log(solution(a, b));
+        </script>
+    </body>
+</html>
