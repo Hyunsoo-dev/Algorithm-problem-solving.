@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>재귀함수</title>
+    </head>
+    <body>
+        <script>
+            /*
+                n을 2로 나눈다
+                몫이 0이면 재귀 끝 
+
+            */
+            function solution(n){
+                let answer="";
+                function DFS(n) {
+                    if (n === 0) return;
+                    else {
+                        let num = parseInt(n / 2);
+                        DFS(num);
+                        answer += String(n % 2);
+                    }    
+                }
+                DFS(n);
+                return answer;
+            }
+
+            console.log(solution(11));
+        </script>
+    </body>
+</html>
