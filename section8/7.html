@@ -1,33 +1,34 @@
-<!-- <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>최대점수 구하기</title>
-    </head>
-    <body>
-        <script>
-            function solution(m, ps, pt){         
-                let answer=Number.MIN_SAFE_INTEGER;
-                let n=ps.length;
-                
-                function DFS(time, i, sum) {
-                    if (time > m) return;
-                    if (time > m) {
-                        return;
-                    } else {
-                        DFS(time + pt[i], i + 1, sum + ps[i])
-                    }
-                }
-                DFS(0, 0, 0);
-                return answer;
-            }
-
-            let ps=[10, 25, 15, 6, 7];
-            let pt=[5, 12, 8, 3, 4]
-            console.log(solution(20, ps, pt));
-        </script>
-    </body>
-</html> -->
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>최대점수 구하기</title>
+  </head>
+  <body>
+    <script>
+      function solution(m, ps, pt) {
+        let answer = Number.MIN_SAFE_INTEGER;
+        let n = ps.length;
+
+        function DFS(time, i, sum) {
+          if (time > m) return;
+          if (i === n) {
+            answer = Math.max(answer, sum);
+          } else {
+            DFS(time + pt[i], i + 1, sum + ps[i]);
+            DFS(time, i + 1, sum);
+          }
+        }
+        DFS(0, 0, 0);
+        return answer;
+      }
+
+      let ps = [10, 25, 15, 6, 7];
+      let pt = [5, 12, 8, 3, 4];
+      console.log(solution(20, ps, pt));
+    </script>
+  </body>
+</html>
+<!-- <html>
     <head>
         <meta charset="UTF-8">
         <title>최대점수 구하기</title>
@@ -56,4 +57,4 @@
             console.log(solution(20, ps, pt));
         </script>
     </body>
-</html>
+</html> -->
