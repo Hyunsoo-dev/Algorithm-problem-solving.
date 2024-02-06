@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>세 수 중 최솟값</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        // 각 수를 비교한다. a와 b, b와c, c와 a. 그 중 가장 작은 값을 구한다.
+        let min = 0;
+        if (a < b) {
+          min = a;
+        } else {
+          min = b;
+        }
+        if (c < min) {
+          min = c;
+        }
+
+        return min;
+      }
+
+      console.log(solution(2, 5, 1));
+      console.log(solution(49, 20, 99));
+    </script>
+  </body>
+</html>
