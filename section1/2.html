@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>삼각형 판별하기</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        let answer = "YES";
+        let sum = a + b + c;
+        let max;
+        if (a > b) {
+          max = a;
+        } else {
+          max = b;
+        }
+        if (max < c) {
+          max = c;
+        }
+
+        // 삼각형이 되려면 가장 긴 값을 제외한 두 개의 값이 가장 긴 값보다 길어야 한다.
+        if (sum - max <= max) {
+          answer = "NO";
+        }
+        return answer;
+      }
+
+      console.log(solution(13, 33, 17));
+      console.log(solution(6, 7, 11));
+    </script>
+  </body>
+</html>
