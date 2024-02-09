@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>10부제</title>
+  </head>
+  <body>
+    <script>
+      function solution(day, arr) {
+        let answer = 0;
+        // answer = arr
+        //   .map((item) => item.toString())
+        //   .filter((item) => item.slice(-1) === day.toString()).length;
+
+        answer = arr.filter((item) => item % 10 === day).length;
+        return answer;
+      }
+
+      arr = [25, 23, 11, 47, 53, 17, 33];
+      // arr = [12, 20, 54, 30, 87, 91, 30];
+      console.log(solution(3, arr));
+    </script>
+  </body>
+</html>

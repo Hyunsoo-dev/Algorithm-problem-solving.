@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>문자 찾기</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = 0;
+        // for (let item of s) {
+        //   if (item === t) {
+        //     answer++;
+        //   }
+        // }
+
+        // 문자열을 특정 문자로 스플릿하면 특정 문자를 기준으로 배열로 만들어짐 test => test.split('e') => ["t", "st"];
+        // split의 파라미터 값을 기준으로 나뉘는 것이기 때문에 split 결과의 length - 1을 하면 몇 개가 있는지 알 수 있다.
+        answer = s.split(t).length - 1;
+        return answer;
+      }
+
+      let str = "COMPUTERPROGRAMMING";
+      console.log(solution(str, "R"));
+    </script>
+  </body>
+</html>
