@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>대문자로 통일</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        // for (let item of s) {
+        //   answer += item.toUpperCase();
+        // }
+
+        // charCodeAt 으로 10진수를 알아낸다. 범위가 97 ~ 122 사이에 있다면 소문자이므로 해당 10진수에서 32를 뺀 값을 다시 문자로 만든다. 97 ~ 122 사이에 없다면 아무 처리 없이 answer에 추가
+        for (let item of s) {
+          let num = item.charCodeAt();
+          if (num >= 97 && num <= 122) {
+            answer += String.fromCharCode(num - 32);
+          } else {
+            answer += item;
+          }
+        }
+        return answer;
+      }
+
+      let str = "ItisTimeToStudy";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
