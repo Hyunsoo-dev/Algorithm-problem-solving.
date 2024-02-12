@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>가장 긴 문자열</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "",
+          max = Number.MIN_SAFE_INTEGER;
+        // str 을 순회
+        // 각 단어의 길이를 변수에 할당
+        // 변수 > max 이면 max = 변수, 아니라면 아무 처리 하지 않음
+        for (let item of s) {
+          if (item.length > max) {
+            max = item.length;
+            answer = item;
+          }
+        }
+        return answer;
+      }
+      let str = ["teacher", "time", "student", "beautiful", "good"];
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
