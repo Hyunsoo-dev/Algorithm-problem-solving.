@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>가운데 문자 출력</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+        let mid = Math.floor(s.length / 2);
+        // ABCDE
+        // 홀수면 item[mid]
+        // ABCD
+        // 짝수면 item[mid - 1] + item[mid]
+
+        for (let item of s) {
+          let isEven = s.length % 2 === 0;
+          if (isEven) {
+            answer = item[mid - 1] + item[mid];
+          } else {
+            answer = item[mid];
+          }
+        }
+        return answer;
+      }
+      console.log(solution("study"));
+    </script>
+  </body>
+</html>
