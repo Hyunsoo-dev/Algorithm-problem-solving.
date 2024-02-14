@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>큰 수 출력하기</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [];
+        // arr을 순회한다
+        // arr[1] 부터 arr[length - 1]까지 순회하면서 arr[i - 1] < arr[i] 큰 경우만 출력한다.
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i - 1] < arr[i]) {
+            answer.push(arr[i]);
+          }
+        }
+        return answer;
+      }
+
+      let arr = [7, 3, 9, 5, 6, 12];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
