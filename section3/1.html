@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        // Math.floor(s의 길이 / 2) 값만큼 s를 순회.
+        // s[i]와 s[n - i - 1]을 비교하면서 대칭점에 있는 값들을 비교하여 똑같으면 회문문자열. 아니면 회문문자열이 아님.
+        // Math.floor(s의 길이 / 2) 만큼만 비교하면 전체 문자열을 다 비교할 수 있음.
+        let answer = "YES";
+        s = s.toLowerCase();
+        let n = s.length;
+        for (let i = 0; i < Math.floor(s.length / 2); i++) {
+          if (s[i] !== s[n - 1 - i]) {
+            answer = "NO";
+          }
+        }
+        return answer;
+      }
+
+      let str = "goooG";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
