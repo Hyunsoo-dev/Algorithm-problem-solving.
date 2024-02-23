@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>숫자만 추출</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "";
+
+        // str 을 순회하면서 item이 isNaN 함수에서 true 값이 나오면 숫자가 아니고 false 가 나오면 숫자
+        for (let item of str) {
+          if (!isNaN(item)) {
+            answer += item;
+          }
+        }
+        return parseInt(answer);
+      }
+
+      let str = "g0en2T0s8eSoft";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
